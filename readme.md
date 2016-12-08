@@ -29,7 +29,7 @@
     REDIS_PASSWORD=null
     REDIS_PORT=6379
     )
-14. Run project: **php artisan serve --host=xxxxxxxx**. Project will be available by address **xxxxxxxx:8000**
+14. Run project: **php artisan serve --host=xxxxxxxx** (your local IP). Project will be available by address **xxxxxxxx:8000**
 
 15. In database table **users** you can check credentials for waiter, cook, manager, trainee.
 
