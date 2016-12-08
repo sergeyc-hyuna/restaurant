@@ -8,6 +8,16 @@
                 <div class="panel-body">
                     You are logged in!
                 </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+            <div class="links">
+                <a href="{{ env('APP_URL') }}/waiter">Waiter tool</a>
+                <a href="{{ env('APP_URL') }}/kitchen">Kitchen tool</a>
+                <a href="{{ env('APP_URL') }}/manager">Manager tool</a>
             </div>
         </div>
     </div>

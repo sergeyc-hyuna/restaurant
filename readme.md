@@ -1,27 +1,36 @@
-# Laravel PHP Framework
+# Restaurant
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Deployment manual
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+1. Clone repository
+2. Install NodeJS, Redis
+3. Create and configuration **.env** file in root project folder. Example: https://gist.github.com/dudnikm-hyuna/63444d5392b52329afda47b8a385d043
+    (APP_URL  --> host of your local machine)
+4. Install composer dependencies:  **composer install**
+5. Install npm dependencies:  **npm install**
+6. Create MYSQL database and add credentials  in **.env**
+    (
+    ....
+     DB_DATABASE=restaurant
+     DB_USERNAME=root
+     DB_PASSWORD=root
+    ...
+    )
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+7. Clear cache: **php artisan cache:clear**
+8. Key generate: **php artisan key:generate**
+9. Add config to cache: **php artisan config:cache**
+10. Make migrations: **php artisan migrate**
+11. Seed database: **php artisan db:seed**
+12. Run socket.io server from project root folder in another console: **node socket.js**
+13. Run redis server
+    ( by default redis run on
+    REDIS_HOST=127.0.0.1
+    REDIS_PASSWORD=null
+    REDIS_PORT=6379
+    )
+14. Run project: **php artisan serve --host=xxxxxxxx**. Project will be available by address **xxxxxxxx:8000**
 
-## Official Documentation
+15. In database table **users** you can check credentials for waiter, cook, manager, trainee.
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+:)
